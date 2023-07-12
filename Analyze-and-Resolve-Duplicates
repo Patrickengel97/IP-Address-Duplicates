@@ -1,0 +1,32 @@
+- Open command prompt
+- Type: arp -a
+- Device's IP address is listed as the interface address at the top of the list
+	- <Device1_IP>
+	- Write down another device
+		- We will use <Device2_IP>
+- Open network & internet settings
+- Open network and sharing center
+- Click change adapter settings
+- Right-click active Ethernet network connection
+	- Properties
+- Select Internet Protocol Version 4 (TCP/IPv4)
+	- Properties
+- Press tab (a subnet mask will be provided)
+	- OK
+	- OK
+- Go back into the command prompt
+- Type: ipconfig /all
+- Scroll up to find the Ethernet network connection and identify the computer's current IPv4 address
+	- See a warning that the IP address is a duplicate
+	- Also shows a preferred IP address of <APIPA_Address> (an APIPA address)
+- Type: arp -a
+	- To confirm the duplication of IP addresses
+	- The local computer's IPv4 address is listed as an APIPA IP address
+	- An APIPA network address has been added to the ARP table to support other APIPA devices
+- Open the Network connection interface window
+- Open up the Ethernet properties
+- From there, open the Internet Protocol Version 4 properties
+- Select Obtain an IP address automatically
+	- Select OK
+- Run arp -a command again to confirm the unique IP address has been changed and APIPA has been removed
+- Close the command prompt and windows
